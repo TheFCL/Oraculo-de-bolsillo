@@ -24,7 +24,7 @@ function playTone(freq, type, duration) {
     osc.frequency.setValueAtTime(freq, audioCtx.currentTime);
     
     // Envelope para evitar "clics" al inicio/final
-    gain.gain.setValueAtTime(0.05, audioCtx.currentTime);
+    gain.gain.setValueAtTime(0.2, audioCtx.currentTime);
     gain.gain.exponentialRampToValueAtTime(0.00001, audioCtx.currentTime + duration);
     
     osc.connect(gain);
